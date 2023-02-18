@@ -1,7 +1,7 @@
 {
   "name": "cli-smith",
   "version": "1.0.0",
-  "main": "main.ts",
+  "main": "bin/main.ts",
   "repository": "https://github.com/ScartonPedro/cli-smith.git",
   "author": "Pedro Scarton",
   "license": "GNU GENERAL PUBLIC LICENSE",
@@ -10,9 +10,17 @@
     "build": "tsc --build --pretty"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0"
+    "@types/node": "^18.13.0",
+    "@types/yargs": "^17.0.22"
   },
   "dependencies": {
+    "@vitalets/google-translate-api": "^9.1.0",
+    "boxen": "^7.0.1",
+    "chalk": "^5.2.0",
+    "figlet": "^1.5.2",
     "yargs": "^17.7.0"
+  },
+  "bin": {
+    "smith": "./stc/main.js"
   }
 }
