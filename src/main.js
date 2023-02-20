@@ -1,20 +1,22 @@
 #!/usr/bin/env node
 const yargs = require('yargs');
-const { getFile } = require('./helpers/readSmith');
+
+const { getFile } = require('./helpers/functions/readSmith');
+const { apiFactory } = require('./helpers/functions/factory');
 
 const argvs = yargs(process.argv.slice(2)).argv._;
 
 const [argv] = argvs;
 if (argv === 'setup') {
-  let data;
-  try {
-    data = getFile();
-  } catch (err) {
-    return;
-  }
+  // let data;
+  // try {
+  //   data = getFile();
+  // } catch (err) {
+  //   return;
+  // }
 
-  // Generate API code using the Smith data
-  // ...
+  apiFactory(['user', 'news', 'media', 'posts']);
+
   console.log(`Generating API Code.`);
   return;
 }
