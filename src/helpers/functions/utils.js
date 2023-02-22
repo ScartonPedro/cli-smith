@@ -11,8 +11,8 @@ const catchAsync =
     }
   };
 
-const createFile = catchAsync(async (pathname, filename, content, suffix) => {
-  await fs.writeFile(path.join(process.cwd(), pathname, `${filename}${suffix ? '.' + suffix : ''}.js`), content, (err) => {
+const createFile = catchAsync(async (pathname, filename, content, suffix, extension = 'js') => {
+  await fs.writeFile(path.join(process.cwd(), pathname, `${filename}${suffix ? '.' + suffix : ''}.${extension}`), content, (err) => {
     if (err) throw err;
   });
 });
